@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
   babel = require('gulp-babel'),
-  nodemon = require('gulp-nodemon');
+  nodemon = require('gulp-nodemon')
+  jasmine = require('gulp-jasmine');
 
 
 gulp.task('build', function () {
@@ -19,5 +20,9 @@ gulp.task('start', function () {
   })
 });
 
+gulp.task('test', function() {
+  return  gulp.src(['spec/test.js'], {base: "."})
+    .pipe(jasmine());
+});
 
 gulp.task('default', ['build', 'start']);

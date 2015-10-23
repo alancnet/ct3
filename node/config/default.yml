@@ -3,5 +3,7 @@ https-port: 3443
 servers:
   - name: master
     host: https://www.google.com:443
+    weight: 10
   - name: secondary
-    host: https://www.google.com:443
+    host: https://www.bing.com:443
+    weight: 20
